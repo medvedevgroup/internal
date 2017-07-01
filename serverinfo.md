@@ -1,27 +1,29 @@
 ## What you need to start
-* A PSU account
+* A PSU Access Account 
   * If you are not local, you will need to create a Slim account. Please talk to Paul first before requesting a slim account.
     * https://ics.psu.edu/advanced-cyberinfrastructure/accounts/slim-access-accounts/
-  * You must have 2fa setup on your account, which you can do at https://2fa.psu.edu/
+  * You must have two factor authorization setup on your account, which you can do at https://2fa.psu.edu/
 * A CSE account
   * [Eric, how do they create a CSE account if they are not CSE students? What if they are temporary visitors that need access to the server?]
 * An ACI account (only needed to access archive storage)
+  * Sign up for an account at https://accounts.aci.ics.psu.edu/acipriv. You must already have a PSU Access Account.
 * The AnyConnect VPN client, installed on the machine you plan to connect to the server with.
   * You can get the VPN client by going to https://vpn.cse.psu.edu. They will need to put in your CSE user id and password and for "second password" enter either  "phone" or a duo number provided by your phone.
+  * More information on the VPN is available at https://www.cse.psu.edu/it/documentation/vpn. Unfortunately, you need to be on the VPN to access this information.
 
 ## Connecting to the server
 
 * The name of the server is CSE-P112MEDG01. 
-* To access it you must first be on the CSE VPN. Then, you can just type `ssh CSE-P112MEDG01`
-* Documentation on the VPN available while on the CSE network here https://www.cse.psu.edu/it/documentation/vpn.  Unfortunately without being on the CSE network it cannot be accessed.
+* To access it you must first be on the CSE VPN. You will need your CSE credentials for this.
+* After you are on the VPN, you can ssh into the host `CSE-P112MEDG01`
+* Your username/password are your PSU access account.
   
 
 ## Archival storage: 
 * Not mounted on server, but data can be moved there using methods below.
 * The host name for accessing the storage is: datamgr.aci.ics.psu.edu
 * The directory of our data is /archive/pzm11/default
-* You (and any of your collaborators) can sign up for accounts at: https://accounts.aci.ics.psu.edu/acipriv
-* If you have issues or questions just submit a ticket to our i-ASK center: https://iask.aci.ics.psu.edu
+
 * To access the data, you have various options:
   * lftp sftp://user@datamgr.aci.ics.psu.edu:22 <applewebdata://A275D139-EFAC-4822-A3E0-FBC240CD66BF> -e 'mirror --verbose --use-pget-n=8 -c /remote/path /local/path'
     * sftp:// = uses SFTP protocol
@@ -41,29 +43,19 @@
 * Keep in mind the the first connection to that machine via ssh (sftp, lftp, etc) will prompt you for a DUO token 
 connection.
 
+## Help
+* To get help regarding CSE accounts, email helpdesk@cse.psu.edu from your CSE account.
+* To get help regarding the archival storage or the ACI accounts, submit a ticket to the i-ASK center: https://iask.aci.ics.psu.edu
+
 
 ## Windows manager
+In order to run X windows programs (i.e. non-terminal) programs, you need an X client installed. OSX or Linux users already have an X client and you can open a shell with X forwarding using  `ssh -X CSE-P112MEDG01`. This will allow you to run X windows programs from the server. 
 
-OSX or linux users can open a shell with X forwarding using  `ssh -X CSE-P112MEDG01`
-
-If using windows, they will need the Xserver. I have found xming to be a decent one that works well with winssh. Both xming and fonts are needed.
+If using Windows, you will need the Xserver. I have found xming to be a decent one that works well with winssh. Both xming and fonts are needed.
 * http://sourceforge.net/projects/xming/files/Xming/6.9.0.31/Xming-6-9-0-31-setup.exe/download
-( http://sourceforge.net/projects/xming/files/Xming-fonts/7.7.0.10/Xming-fonts-7-7-0-10-setup.exe/download
+* http://sourceforge.net/projects/xming/files/Xming-fonts/7.7.0.10/Xming-fonts-7-7-0-10-setup.exe/download
 
-After having all of those..
-
-     Windows.
-
-         Open WinSSH and go to settings and find the "Forward X 
-connections" and check the box. Save settings.
-
-         Connect vpn to vpn.cse.psu.edu   using your CSE User id and 
-password.
-
-         ssh  to the hostname      CSE-P112MEDG01
-
-         It will prompt for duo 2 factor id.
-
-         Once received it will prompt for PSU Access Account Password 
-(not cse)
-
+After having all of those, then 
+* Open WinSSH and go to settings and find the "Forward X connections" and check the box. Save settings.
+* Connect vpn to vpn.cse.psu.edu.
+* ssh to the host CSE-P112MEDG01
