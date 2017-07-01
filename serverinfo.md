@@ -1,4 +1,15 @@
-Archival storage: 
+
+ 
+## Connecting to the server
+
+* The name of the server is CSE-P112MEDG01. 
+* To access it you must first be on the CSE VPN. Then, you can just type `ssh CSE-P112MEDG01`
+* Documentation on the VPN available while on the CSE network here https://www.cse.psu.edu/it/documentation/vpn.  Unfortunately without being on the CSE network it cannot be accessed.
+  * Users can get the VPN client by going to https://vpn.cse.psu.edu. They will need to put in their cse user id and password and for "second password" either  "push" or a duo number provided by their phone.
+  * They will need to install the AnyConnect VPN client on the machine they plan to connect to the server with.
+
+
+## Archival storage: 
 * Not mounted on server, but data can be moved there using methods below.
 * The host name for accessing the storage is: datamgr.aci.ics.psu.edu
 * You (and any of your collaborators) can sign up for accounts at: https://accounts.aci.ics.psu.edu/acipriv
@@ -22,5 +33,29 @@ Archival storage:
 * Keep in mind the the first connection to that machine via ssh (sftp, lftp, etc) will prompt you for a DUO token 
 connection.
 
- 
- 
+
+## Windows manager
+
+OSX or linux users can open a shell with X forwarding using  `ssh -X CSE-P112MEDG01`
+
+If using windows, they will need the Xserver. I have found xming to be a decent one that works well with winssh. Both xming and fonts are needed.
+* http://sourceforge.net/projects/xming/files/Xming/6.9.0.31/Xming-6-9-0-31-setup.exe/download
+( http://sourceforge.net/projects/xming/files/Xming-fonts/7.7.0.10/Xming-fonts-7-7-0-10-setup.exe/download
+
+After having all of those..
+
+     Windows.
+
+         Open WinSSH and go to settings and find the "Forward X 
+connections" and check the box. Save settings.
+
+         Connect vpn to vpn.cse.psu.edu   using your CSE User id and 
+password.
+
+         ssh  to the hostname      CSE-P112MEDG01
+
+         It will prompt for duo 2 factor id.
+
+         Once received it will prompt for PSU Access Account Password 
+(not cse)
+
