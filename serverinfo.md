@@ -1,17 +1,25 @@
+## What you need to start
+* A PSU account
+  * If you are not local, you will need to create a Slim account. Please talk to Paul first before requesting a slim account.
+    * https://ics.psu.edu/advanced-cyberinfrastructure/accounts/slim-access-accounts/
+  * You must have 2fa setup on your account, which you can do at https://2fa.psu.edu/
+* A CSE account
+  * [Eric, how do they create a CSE account if they are not CSE students? What if they are temporary visitors that need access to the server?]
+* An ACI account (only needed to access archive storage)
+* The AnyConnect VPN client, installed on the machine you plan to connect to the server with.
+  * You can get the VPN client by going to https://vpn.cse.psu.edu. They will need to put in your CSE user id and password and for "second password" enter either  "phone" or a duo number provided by your phone.
 
- 
 ## Connecting to the server
 
 * The name of the server is CSE-P112MEDG01. 
 * To access it you must first be on the CSE VPN. Then, you can just type `ssh CSE-P112MEDG01`
 * Documentation on the VPN available while on the CSE network here https://www.cse.psu.edu/it/documentation/vpn.  Unfortunately without being on the CSE network it cannot be accessed.
-  * Users can get the VPN client by going to https://vpn.cse.psu.edu. They will need to put in their cse user id and password and for "second password" either  "push" or a duo number provided by their phone.
-  * They will need to install the AnyConnect VPN client on the machine they plan to connect to the server with.
-
+  
 
 ## Archival storage: 
 * Not mounted on server, but data can be moved there using methods below.
 * The host name for accessing the storage is: datamgr.aci.ics.psu.edu
+* The directory of our data is /archive/pzm11/default
 * You (and any of your collaborators) can sign up for accounts at: https://accounts.aci.ics.psu.edu/acipriv
 * If you have issues or questions just submit a ticket to our i-ASK center: https://iask.aci.ics.psu.edu
 * To access the data, you have various options:
