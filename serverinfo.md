@@ -4,7 +4,7 @@
     * https://ics.psu.edu/advanced-cyberinfrastructure/accounts/slim-access-accounts/
   * You must have two factor authorization setup on your account, which you can do at https://2fa.psu.edu/
 * A CSE account
-  * If you're a CSE grad student, you automatically have a CSE account. You can check with helpdesk@cse.psu.edu to check, if you are not sure. To create an account, please work with Paul to complete the form https://github.com/medvedevgroup/internal/blob/master/CSEAccount%20Form.v2.pdf and submit it to helpdesk@cse.psu.edu
+  * If you're a CSE grad student, you automatically have a CSE account. You can check with helpdesk@cse.psu.edu to check, if you are not sure. To create an account, please work with Paul to complete the form https://github.com/medvedevgroup/internal/blob/master/CSEAccount%20Form.v2.pdf and submit it to helpdesk@cse.psu.edu. A "Dept. or School Officer Signature" is not needed for a student or person affiliated with Penn State (i.e. Visiting Scholar, Post Doc, etc.) 
 * An ACI account (only needed to access archive storage)
   * Sign up for an account at https://accounts.aci.ics.psu.edu/acipriv. You must already have a PSU Access Account.
 * The AnyConnect VPN client, installed on the machine you plan to connect to the server with.
