@@ -3,20 +3,19 @@
   * If you are not local, you will need to create a Slim account. Please talk to Paul first before requesting a slim account.
     * https://ics.psu.edu/advanced-cyberinfrastructure/accounts/slim-access-accounts/
   * You must have two factor authorization setup on your account, which you can do at https://2fa.psu.edu/
-* A CSE account
-  * If you're a CSE grad student, you automatically have a CSE account. You can check with helpdesk@cse.psu.edu, if you are not sure. To create an account, please work with Paul to complete the form https://github.com/medvedevgroup/internal/blob/master/CSEAccount%20Form.v2.pdf and submit it to helpdesk@cse.psu.edu. A "Dept. or School Officer Signature" is not needed for a student or person affiliated with Penn State (i.e. Visiting Scholar, Post Doc, etc.) 
+* A CSE account is NOT needed
 * An account on the server. Please email helpdesk@cse.psu.edu and CC Paul to create one.
 * An ACI account (only needed to access archive storage)
   * Sign up for an account at https://accounts.aci.ics.psu.edu/acipriv. You must already have a PSU Access Account.
 * The AnyConnect VPN client, installed on the machine you plan to connect to the server with.
-  * You can get the VPN client by going to https://vpn.cse.psu.edu. They will need to put in your CSE user id and password and for "second password" enter either  "phone" or a duo number provided by your phone.
-  * More information on the VPN is available at https://www.cse.psu.edu/it/documentation/vpn. Unfortunately, you need to be on the VPN to access this information.
+  * You can get the VPN client by going to https://vpn.its.psu.edu. You will need to put in your PSU user id and password and for "second password" enter either "phone" or a duo number provided by your phone.
+  * More information on the VPN is available at http://kb.its.psu.edu/article/891
 
 ## Connecting to the server
 
 * The name of the server is CSE-P112MEDG01. 
-* To access it you must first be on the CSE VPN. You will need your CSE credentials for this.
-* After you are on the VPN, you can ssh into the host `CSE-P112MEDG01`
+* To access it you must first be on the PSU network or use a PSU VPN or CSE VPN (PSU VPN recommended). 
+* After you are on the VPN, you can ssh into the host `CSE-CBMEDG01.psu.edu`
 * Your username/password are your PSU access account.
   
 
@@ -45,7 +44,6 @@
 connection.
 
 ## Help
-* To get help regarding CSE accounts, email helpdesk@cse.psu.edu from your CSE account.
 * To get help regarding the archival storage or the ACI accounts, submit a ticket to the i-ASK center: https://iask.aci.ics.psu.edu
 
 
@@ -58,5 +56,5 @@ If using Windows, you will need the Xserver. I have found xming to be a decent o
 
 After having all of those, then 
 * Open WinSSH and go to settings and find the "Forward X connections" and check the box. Save settings.
-* Connect vpn to vpn.cse.psu.edu.
-* ssh to the host CSE-P112MEDG01
+* Connect vpn to PSU
+* ssh to the host
