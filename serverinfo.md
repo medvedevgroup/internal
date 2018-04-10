@@ -17,7 +17,46 @@
 * To access it you must first be on the PSU network or use a PSU VPN or CSE VPN (PSU VPN recommended). 
 * After you are on the VPN, you can ssh into the host `CSE-CBMEDG01.psu.edu`
 * Your username/password are your PSU access account.
-  
+
+
+## Snapshot backups
+A snapshot is made daily of all `/home/<username>` directories at 6:25 AM and are kept for 7 days. 
+The snapshots are stored on the same machine but on a different disk partition. 
+They can help restore files if they were accidentaly deleted, or if the home partition is corrupted. 
+However, they will not help in the case of a more broad failure.
+
+
+If you need to restore a file
+* `cd /research/backups/snapshots`
+* find the last known date the file existed
+* `cd <date>/<username>` and find the file
+* copy (NOT move) the file back to where you want it 
+  * `cp <filename> ~/<path to location>`
+* Do not delete any files from `/home/backups/snapshots`.
+
+
+Example:
+* cd to snapshots directory
+  * `edp109@CSE-cbmedg01:$ cd /research/backups/snapshots/`
+* ls to see available dates for snapshots (only 5 showing as it has not reached inital 7 day rotation)
+```
+edp109@CSE-cbmedg01:$ ls
+2018-04-06/ 2018-04-07/ 2018-04-08/ 2018-04-09/ 2018-04-10/
+```
+* cd to my snapshots directory for the date to restore
+  * `edp109@CSE-cbmedg01:$ cd /research/backups/snapshots/2018-04-10/edp109/`
+* ls to see available files
+```
+  edp109@CSE-cbmedg01:$ ls
+  backuptest  foo1
+```
+* copy backuptest file back to my directory
+  * `edp109@CSE-cbmedg01:$ cp backuptest ~/backuptest`
+* or alternatively copy it back to a new name
+  * `edp109@CSE-cbmedg01:$ cp backuptest ~/backuptest-restored-from-2018-04-10`
+
+
+
 
 ## Archival storage: 
 * Not mounted on server, but data can be moved there using methods below.
