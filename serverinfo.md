@@ -55,7 +55,10 @@ edp109@CSE-cbmedg01:$ ls
 * or alternatively copy it back to a new name
   * `edp109@CSE-cbmedg01:$ cp backuptest ~/backuptest-restored-from-2018-04-10`
 
-
+We are looking at additional automated backup options that would protect in the case of a failure like the one that happened recently. Meanwhile, I suggest to
+* Keep all your code under your home directory.
+* Keep data files that are small under your home directory
+* Use archival storage to copy over data that is more permanent in nature. Archival storage is not only an alternate location for your data, it itself is backed up regularly by ACI. For example, any datasets from old papers that you want to preserve can be copied to archival storage when the project is stable.
 
 
 ## Archival storage: 
