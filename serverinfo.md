@@ -13,9 +13,8 @@
 
 ## Connecting to the server
 
-* The name of the server is CSE-P112MEDG01. 
-* To access it you must first be on the PSU network or use a PSU VPN or CSE VPN (PSU VPN recommended). 
-* After you are on the VPN, you can ssh into the host `CSE-CBMEDG01.psu.edu`
+* Connect to PSU VPN (as of 4/12/18, the vpn address was vpn.its.psu.edu and the "Group" was ISPtoPSU.
+* ssh into the host `cse-cbmedg01.psu.edu`
 * Your username/password are your PSU access account.
 
 
