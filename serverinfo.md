@@ -29,7 +29,7 @@ The snapshots are stored on the same machine but on a different disk partition.
 They can help restore files if they were accidentaly deleted, or if the home partition is corrupted. 
 However, they will not help in the case of a more broad failure.
 
-If you need to restore a file, look for it in `/research/backups/snapshots/<date>/<username>`. Use the `cp` command to copy the file wherever you want. Do not move the file or delete/modify any files in `/home/backups/snapshots`.
+If you need to restore a file, look for it in `/research/backups/snapshots/<date>/<username>`. Use the `cp` command to copy the file wherever you want. Do not move the file or delete/modify any files in `/research/backups/snapshots`.
 
 We are looking at additional automated backup options that would protect in the case of a failure like the one that happened recently. Meanwhile, I suggest to
 * Keep all your code under your home directory.
