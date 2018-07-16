@@ -21,60 +21,41 @@
   * Your username/password are your PSU access account.
 
 ## Using the server
-* Your home directory has a 2 Gb quota. Use it to to store anything is a priority for being backed up.
-* Use `/resesarch/<username>/` for other storage.
+* Your home directory has a 2 Gb quota. Use it to to store anything that will be backed up. For example,
+  * Your code
+  * Small data files
+* Use `/resesarch/<username>/` for other storage. It is NOT backed up.
+* Use archival storage as a way to backup data more than 2 Gb:
+  * * We have storage that is located outside the server. This is called archival storage. It is not mounted on our  server.
+  * To access the storage, see below.
+  * Use archival storage to copy over data that is more permanent in nature. Archival storage is not only an alternate location for your data, it itself is backed up regularly by ACI. For example, any datasets from old papers that you want to preserve can be copied to archival storage when the project is stable. 
+* Please use the slack channel "server" to communicate regarding day-to-day use.
+* It is recommended that you use version control for your code, e.g. GitHub. If you are a member of the [medvedevgroup](https://github.com/medvedevgroup/) GitHub org, you can have unlimited private repos
+* If you have data that more than 2 Gb that you would like to backup, your best option is to use archival storage to store it (see below).
 
 
-## Snapshot backups
+## Accessing backups of your home directory
+
+### Snapshots (for 7 days)
 A snapshot is made daily of all `/home/<username>` directories at 6:25 AM and are kept for 7 days. 
 The snapshots are stored on the same machine but on a different disk partition. 
 They can help restore files if they were accidentaly deleted, or if the home partition is corrupted. 
-However, they will not help in the case of a more broad failure.
+However, they will not help in the case of a more broad failure. If you need to restore a file, look for it in `/research/backups/snapshots/<date>/<username>`. Use the `cp` command to copy the file wherever you want. Do not move the file or delete/modify any files in `/research/backups/snapshots`.
 
-If you need to restore a file, look for it in `/research/backups/snapshots/<date>/<username>`. Use the `cp` command to copy the file wherever you want. Do not move the file or delete/modify any files in `/research/backups/snapshots`.
-
-We are looking at additional automated backup options that would protect in the case of a failure like the one that happened recently. Meanwhile, I suggest to
-* Keep all your code under your home directory.
-* Keep data files that are small under your home directory
-* Use archival storage to copy over data that is more permanent in nature. Archival storage is not only an alternate location for your data, it itself is backed up regularly by ACI. For example, any datasets from old papers that you want to preserve can be copied to archival storage when the project is stable.
+### Longer-term backups
+These are stored off the server, for up to 9 months. They are intended for the case of broad system failure on the server. To access these backups, we have to work with IT support staff.
 
 
-## Archival storage: 
-* Not mounted on server, but data can be moved there using methods below.
-* The host name for accessing the storage is: datamgr.aci.ics.psu.edu
-* The directory of our data is /archive/pzm11/default
-
-* To access the data, you have various options:
-  * lftp sftp://user@datamgr.aci.ics.psu.edu:22 <applewebdata://A275D139-EFAC-4822-A3E0-FBC240CD66BF> -e 'mirror --verbose --use-pget-n=8 -c /remote/path /local/path'
+## Accessing archival storage: 
+Archival storage resides on `datamgr.aci.ics.psu.edu`, and the directory of our data is /archive/pzm11/default. To access the data, here are some options suggested by IT staff: 
+* `lftp sftp://user@datamgr.aci.ics.psu.edu:22 <applewebdata://A275D139-EFAC-4822-A3E0-FBC240CD66BF> -e 'mirror --verbose --use-pget-n=8 -c /remote/path /local/path'`
     * sftp:// = uses SFTP protocol
-    * mirror = mirror mode
-    * verbose = shows the files being downloaded
     * use-pget-n = number of segments, realy useful to speed up big files
-    * parallel = downloads multiplier files at the same time
-    * if you want to download files in parallel switch out use-pget-n=8 with --parallel=8
-
-
-  * Parallel rsync: http://www.linuxproblem.org/art_9.html <http://www.linuxproblem.org/art_9.html>
-    * prsync /home/source /home/target target.machine.psu.edu <http://stratus.met.psu.edu/> 8
-    * (8 is number of threads)
-
-  * Python based Parallel Rsync: https://code.google.com/archive/p/parallel-ssh/ or more directly https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/parallel-ssh/pssh-2.3.1.tar.gz which is the tarball with the appropriate code source. The man page is here: https://www.mankier.com/1/prsync
-
-* Keep in mind the the first connection to that machine via ssh (sftp, lftp, etc) will prompt you for a DUO token 
-connection.
+    * if you want to download files in parallel switch out use-pget-n=8 with --parallel=8   
+* (Parallel rsync)(https://www.mankier.com/1/prsync)
+  * https://code.google.com/archive/p/parallel-ssh/ 
 
 ## Help
+* Use the server channel on slack as a first point for questions that you think other lab members might have encounetered.
 * To get help regarding the archival storage or the ACI accounts, submit a ticket to the i-ASK center: https://iask.aci.ics.psu.edu
 * For other help, contact helpdesk@cse.psu.edu
-
-## Windows manager
-In order to run X windows programs (i.e. non-terminal) programs, you need an X client installed. OSX or Linux users already have an X client and you can open a shell with X forwarding using  `ssh -X CSE-P112MEDG01`. This will allow you to run X windows programs from the server. 
-
-If using Windows, you will need the Xserver. I have found xming to be a decent one that works well with winssh. Both xming and fonts are needed.
-* http://sourceforge.net/projects/xming/files/Xming/6.9.0.31/Xming-6-9-0-31-setup.exe/download
-* http://sourceforge.net/projects/xming/files/Xming-fonts/7.7.0.10/Xming-fonts-7-7-0-10-setup.exe/download
-
-After having all of those, then 
-* Open WinSSH and go to settings and find the "Forward X connections" and check the box. Save settings.
-* Connect vpn to PSU
-* ssh to the host
