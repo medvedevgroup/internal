@@ -5,7 +5,8 @@
   * You must have two factor authorization setup on your account, which you can do at https://2fa.psu.edu/
 * A CSE account is NOT needed
 * An account on the server. Please email helpdesk@cse.psu.edu and CC Paul to create one.
-* An ACI account (only needed to access archive storage)
+* An ACI account 
+  * Only needed to access archive storage. If you are not sure if you need this, then just skip it.
   * Sign up for an account at https://accounts.aci.ics.psu.edu/acipriv. You must already have a PSU Access Account.
 * The AnyConnect VPN client, installed on the machine you plan to connect to the server with.
   * You can get the VPN client by going to https://vpn.its.psu.edu. You will need to put in your PSU user id and password and for "second password" enter either "phone" or a duo number provided by your phone.
@@ -16,6 +17,10 @@
 * Connect to PSU VPN (as of 4/12/18, the vpn address was vpn.its.psu.edu and the "Group" was ISPtoPSU.
 * ssh into the host `cse-cbmedg01.psu.edu`
 * Your username/password are your PSU access account.
+
+## Using the server
+* Your home directory has a 2 Gb quota. Use it to to store anything is a priority for being backed up.
+* Use `/resesarch/<username>/` for other storage.
 
 
 ## Snapshot backups
@@ -86,7 +91,7 @@ connection.
 
 ## Help
 * To get help regarding the archival storage or the ACI accounts, submit a ticket to the i-ASK center: https://iask.aci.ics.psu.edu
-
+* For other help, contact helpdesk@cse.psu.edu
 
 ## Windows manager
 In order to run X windows programs (i.e. non-terminal) programs, you need an X client installed. OSX or Linux users already have an X client and you can open a shell with X forwarding using  `ssh -X CSE-P112MEDG01`. This will allow you to run X windows programs from the server. 
