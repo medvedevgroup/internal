@@ -21,13 +21,12 @@
   * Your username/password are your PSU access account.
 
 ## Using the server
-* Your home directory has a 2 Gb quota. Use it to to store anything that will be backed up. For example,
+* Your home directory has a 2 Gb quota. Use it to to store anything that you want backed up daily. For example,
   * Your code
   * Small data files
 * Use `/resesarch/<username>/` for other storage. It is NOT backed up.
 * Use archival storage as a way to backup data more than 2 Gb:
-  * * We have storage that is located outside the server. This is called archival storage. It is not mounted on our  server.
-  * To access the storage, see below.
+  * We have storage that is located outside the server. This is called archival storage. It is not mounted on our  server. To access the storage, see below.
   * Use archival storage to copy over data that is more permanent in nature. Archival storage is not only an alternate location for your data, it itself is backed up regularly by ACI. For example, any datasets from old papers that you want to preserve can be copied to archival storage when the project is stable. 
 * Please use the slack channel "server" to communicate regarding day-to-day use.
 * It is recommended that you use version control for your code, e.g. GitHub. If you are a member of the [medvedevgroup](https://github.com/medvedevgroup/) GitHub org, you can have unlimited private repos
@@ -49,10 +48,7 @@ These are stored off the server, for up to 9 months. They are intended for the c
 ## Accessing archival storage: 
 Archival storage resides on `datamgr.aci.ics.psu.edu`, and the directory of our data is /archive/pzm11/default. To access the data, here are some options suggested by IT staff: 
 * `lftp sftp://user@datamgr.aci.ics.psu.edu:22 <applewebdata://A275D139-EFAC-4822-A3E0-FBC240CD66BF> -e 'mirror --verbose --use-pget-n=8 -c /remote/path /local/path'`
-    * sftp:// = uses SFTP protocol
-    * use-pget-n = number of segments, realy useful to speed up big files
-    * if you want to download files in parallel switch out use-pget-n=8 with --parallel=8   
-* (Parallel rsync)(https://www.mankier.com/1/prsync)
+* [Parallel rsync](https://www.mankier.com/1/prsync)
   * https://code.google.com/archive/p/parallel-ssh/ 
 
 ## Help
