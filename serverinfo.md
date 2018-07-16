@@ -14,9 +14,11 @@
 
 ## Connecting to the server
 
-* Connect to PSU VPN (as of 4/12/18, the vpn address was vpn.its.psu.edu and the "Group" was ISPtoPSU.
+* Connect to PSU VPN using AnyConnect VPN client
+  * The vpn address is vpn.its.psu.edu and the "Group" was ISPtoPSU (as of 4/12/18).
 * ssh into the host `cse-cbmedg01.psu.edu`
-* Your username/password are your PSU access account.
+  * You will need to do 2fa at this stage
+  * Your username/password are your PSU access account.
 
 ## Using the server
 * Your home directory has a 2 Gb quota. Use it to to store anything is a priority for being backed up.
