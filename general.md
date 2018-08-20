@@ -15,7 +15,7 @@ For your reference, here is the [form](http://www.matse.psu.edu/files/financial_
 [form](https://wiki.vpr.psu.edu/display/HUCK/Forms?preview=/17465354/17465358/Huck%20Card%20Swipe%20Key%20Issuance%20Form.pdf)
 You can also stop by 101 LSB to pick up the form.
 * If you do not have a PSU id card, please speak to Paul first.
-* To access our group's compute server, see these (instructions)[serverinfo.md].
+* To access our group's compute server, see these [instructions](serverinfo.md).
 * Please create a slack account and join http://medvedevgroup.slack.com/. We often use slack for important communication, so please
 enable some sort of instantenous notifications for the announcement channel, permanent_members channel, and any direct messages. 
 At the same time, please be considerate when posting things there and use other channels for non-urgent and non-crucial messages.
