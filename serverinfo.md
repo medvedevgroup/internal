@@ -3,7 +3,7 @@
   * If you are not local, you will need to create a Slim account. Please talk to Paul first before requesting a slim account.
     * https://ics.psu.edu/advanced-cyberinfrastructure/accounts/slim-access-accounts/
   * You must have two factor authorization setup on your account, which you can do at https://2fa.psu.edu/
-* An account on the server. Please email helpdesk@cse.psu.edu and CC Paul to create one.
+* An account on the server. Please email csehelpdesk@engr.psu.edu and CC Paul to create one.
 * An ACI account 
   * Only needed to access archive storage. If you are not sure if you need this, then just skip it.
   * Sign up for an account at https://accounts.aci.ics.psu.edu/acipriv. You must already have a PSU Access Account.
