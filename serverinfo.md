@@ -54,4 +54,4 @@ Archival storage resides on `datamgr.aci.ics.psu.edu`, and the directory of our 
 ## Help
 * Use the server channel on slack as a first point for questions that you think other lab members might have encounetered.
 * To get help regarding the archival storage or the ACI accounts, submit a ticket to the i-ASK center: https://iask.aci.ics.psu.edu
-* For other help, contact helpdesk@cse.psu.edu
+* For other help, contact csehelpdesk@engr.psu.edu
