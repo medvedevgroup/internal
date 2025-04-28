@@ -46,10 +46,21 @@ These are stored off the server, for up to 9 months. They are intended for the c
 
 
 ## Accessing archival storage: 
-Archival storage resides on `datamgr.aci.ics.psu.edu`, and the directory of our data is /archive/pzm11/default. To access the data, here are some options suggested by IT staff: 
+<!-- Archival storage resides on `datamgr.aci.ics.psu.edu`, and the directory of our data is /archive/pzm11/default. To access the data, here are some options suggested by IT staff: 
 * `lftp sftp://user@datamgr.aci.ics.psu.edu:22 <applewebdata://A275D139-EFAC-4822-A3E0-FBC240CD66BF> -e 'mirror --verbose --use-pget-n=8 -c /remote/path /local/path'`
 * [Parallel rsync](https://www.mankier.com/1/prsync)
-  * https://code.google.com/archive/p/parallel-ssh/ 
+  * https://code.google.com/archive/p/parallel-ssh/  -->
+
+Archival storage resides on `Globus` and inside `Penn State ICDS Archive` collection, and the directory of our data is  `/storage/archive/pzm11/default`. To access the data, here are some options:
+
+* Use the Globus web interface to transfer files
+  * https://www.globus.org/
+  * You will need to sign into Globus account using your PSU email address
+  * You will need to connect to the Penn State ICDS Archive collection
+
+* Download and install Globus Connect Personal ([see here](https://docs.globus.org/globus-connect-personal/install/linux/)) from your profile  on our server
+* While running the program in the terminal, you can access our server from `Globus`. Our server endpoint is `e5-cse-cbmedg01` and  the archival storage endpoint is `Penn State ICDS Archive`.
+* After you have connected to the endpoints, you can archive files in `/storage/archive/pzm11/default/`.
 
 ## Help
 * Use the server channel on slack as a first point for questions that you think other lab members might have encounetered.
