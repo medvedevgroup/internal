@@ -33,18 +33,6 @@
 * If you have data that more than 2 Gb that you would like to backup, your best option is to use archival storage to store it (see below).
 
 
-## Accessing backups of your home directory
-
-### Snapshots (for 7 days) [I AM NOT SURE THIS IS STILL DONE]
-A snapshot is made daily of all `/home/<username>` directories at 6:25 AM and are kept for 7 days. 
-The snapshots are stored on the same machine but on a different disk partition. 
-They can help restore files if they were accidentaly deleted, or if the home partition is corrupted. 
-However, they will not help in the case of a more broad failure. If you need to restore a file, look for it in `/research/backups/snapshots/<date>/<username>`. Use the `cp` command to copy the file wherever you want. Do not move the file or delete/modify any files in `/research/backups/snapshots`.
-
-### Longer-term backups [I AM NOT SURE THIS IS STILL DONE]
-These are stored off the server, for up to 9 months. They are intended for the case of broad system failure on the server. To access these backups, we have to work with IT support staff.
-
-
 ## Accessing archival storage: 
 <!-- Archival storage resides on `datamgr.aci.ics.psu.edu`, and the directory of our data is /archive/pzm11/default. To access the data, here are some options suggested by IT staff: 
 * `lftp sftp://user@datamgr.aci.ics.psu.edu:22 <applewebdata://A275D139-EFAC-4822-A3E0-FBC240CD66BF> -e 'mirror --verbose --use-pget-n=8 -c /remote/path /local/path'`
